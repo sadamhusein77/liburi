@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.text-title-24 {
+    @apply text-2xl font-medium;
+}
