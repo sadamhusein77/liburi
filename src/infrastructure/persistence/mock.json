@@ -1,0 +1,131 @@
+{
+    "itemList": [
+        {
+            "name": "travelers",
+            "count": 80409
+        },
+        {
+            "name": "treasure",
+            "count": 862
+        },
+        {
+            "name": "cities",
+            "count": 1492
+        }
+    ],
+    "product": [
+        {   
+            "name": "Houses with beauty backyard",
+            "category": "houses",
+            "items": [
+                {
+                    "id": 21,
+                    "name": "Tabby Town",
+                    "location": "Gunung Batu, Indonesia",
+                    "isRecommended": true
+                },
+                {
+                    "id": 22,
+                    "name": "Anggana",
+                    "location": "Bogor, Indonesia"
+                },
+                {
+                    "id": 23,
+                    "name": "Seattle Rain",
+                    "location": "Jakarta, Indonesia"
+                },
+                {
+                    "id": 24,
+                    "name": "Wodden Pit",
+                    "location": "Wonosobo, Indonesia"
+                }
+            ]
+        },
+        {   
+            "name": "Hotels with large living room",
+            "category": "hotels",
+            "items": [
+                {
+                    "id": 31,
+                    "name": "Green Park",
+                    "location": "Tangerang, Indonesia"
+                },
+                {
+                    "id": 32,
+                    "name": "Podo Wae",
+                    "location": "Madiun, Indonesia"
+                },
+                {
+                    "id": 33,
+                    "name": "Silver Rain",
+                    "location": "Bandung, Indonesia"
+                },
+                {
+                    "id": 34,
+                    "name": "Cashville",
+                    "location": "Kemang, Indonesia",
+                    "isRecommended": true
+                }
+            ]
+        },
+        {   
+            "name": "Apartments with kitchen set",
+            "category": "apartments",
+            "items": [
+                {
+                    "id": 41,
+                    "name": "PS Wood",
+                    "location": "Depok, Indonesia"
+                },
+                {
+                    "id": 42,
+                    "name": "One Five",
+                    "location": "Jakarta, Indonesia"
+                },
+                {
+                    "id": 43,
+                    "name": "Minimal",
+                    "location": "Bogor, Indonesia",
+                    "isRecommended": true
+                },
+                {
+                    "id": 44,
+                    "name": "Stays Home",
+                    "location": "Wonosobo, Indonesia"
+                }
+            ]
+        }
+    ],
+    "productPopular": [
+        {
+            "id": 1,
+            "name": "Blue Origin Fams",
+            "location": "Jakarta Indonesia",
+            "price": 50
+        },
+        {
+            "id": 2,
+            "name": "Ocean Land",
+            "location": "Bandung Indonesia",
+            "price": 22
+        },
+        {
+            "id": 3,
+            "name": "Stark House",
+            "location": "Malang Indonesia",
+            "price": 856
+        },
+        {
+            "id": 4,
+            "name": "Vinna Vill",
+            "location": "Malang Indonesia",
+            "price": 62
+        },
+        {
+            "id": 5,
+            "name": "Bobox",
+            "location": "Medan Indonesia",
+            "price": 72
+        }
+    ]
+}
