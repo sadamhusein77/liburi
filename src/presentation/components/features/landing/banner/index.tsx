@@ -60,7 +60,7 @@ const ItemList = () => {
 
 // Image Section
 const BannerImage = () => (
-  <img src={ImgBanner} alt="img-banner" className="w-full max-w-[500px] object-cover" />
+  <img src={ImgBanner} alt="img-banner" className="w-full h-full max-w-[559px]" />
 );
 
 // Attach subcomponents

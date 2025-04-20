@@ -4,7 +4,7 @@ import RatingStars from "@/presentation/components/ui/rating/indes"
 
 const Testimonial = ({ children }: {children?: React.ReactNode}) => {
     return (
-        <div className="flex w-full h-full gap-x-14 mt-[70px]">
+        <div className="flex w-full h-full gap-x-20 mt-[70px]">
             { children }
         </div>
     )
@@ -43,7 +43,7 @@ const CTA = () => {
 
 const Ratings = () => {
     return (
-        <RatingStars rating={3.5} />
+        <RatingStars rating={5} />
     )
 }
 Content.Ratings = Ratings;

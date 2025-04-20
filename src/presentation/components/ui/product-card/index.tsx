@@ -48,7 +48,7 @@ const ProductCard = ({
             src={imgUrl ?? defaultImg}
             alt={`Image of ${name}`}
             className={cn(
-              "w-full h-[180px] rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
+              "w-full h-full rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
               className
             )}
           />

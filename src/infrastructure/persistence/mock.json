@@ -127,5 +127,70 @@
             "location": "Medan Indonesia",
             "price": 72
         }
+    ],
+    "contentFooter": [
+        {
+            "id": 1,
+            "title": "For Beginners",
+            "item": [
+                {
+                    "id": 1,
+                    "url": "/lorem",
+                    "name": "New Account"
+                },
+                {
+                    "id": 2,
+                    "url": "/lorem",
+                    "name": "Start Booking a Room"
+                },
+                {
+                    "id": 3,
+                    "url": "/lorem",
+                    "name": "Use Payments"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Explore Us",
+            "item": [
+                {
+                    "id": 1,
+                    "url": "/lorem",
+                    "name": "Our Careers"
+                },
+                {
+                    "id": 2,
+                    "url": "/lorem",
+                    "name": "Privacy"
+                },
+                {
+                    "id": 3,
+                    "url": "/lorem",
+                    "name": "Terms & Conditions"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Connect Us",
+            "item": [
+                {
+                    "id": 1,
+                    "url": "/lorem",
+                    "name": "support@staycation.id"
+                },
+                {
+                    "id": 2,
+                    "url": "/lorem",
+                    "name": "021 - 2208 - 1996"
+                },
+                {
+                    "id": 3,
+                    "url": "/lorem",
+                    "name": "Staycation, Kemang, Jakarta"
+                }
+            ]
+        }
     ]
 }

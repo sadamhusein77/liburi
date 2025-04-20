@@ -18,3 +18,15 @@ export interface IListProduct {
     category: string;
     items: IProduct[];
 }
+
+export interface IItemContentFooter {
+    id: number;
+    url: string;
+    name: string;
+}
+
+export interface IContentFooter {
+    id: number;
+    title: string;
+    item: IItemContentFooter[]
+}
