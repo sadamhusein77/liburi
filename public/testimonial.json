@@ -1,0 +1,26 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "testimonial": [
+            {
+                "id": 1,
+                "name": "Rick Grimes",
+                "carrier": "Actor",
+                "rate": 5,
+                "comment": "What a great trip with my family and I should try again next time soon ...",
+                "imgUrl": "/images/family-group.svg"
+            },
+            {
+                "id": 2,
+                "name": "Daryl Dixon",
+                "carrier": "Actor",
+                "rate": 5,
+                "comment": "As a wife I can pick a great trip with my own lovely family ... thank you!",
+                "imgUrl": "/images/family-group-2.svg"
+            }
+        ]
+    }
+}

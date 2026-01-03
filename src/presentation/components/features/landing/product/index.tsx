@@ -1,118 +1,63 @@
-import {
-    ImgTabbyTown,
-    ImgAnggana,
-    ImgSeattleRain,
-    ImgWoodenPit,
-    ImgGreenPark,
-    ImgPodoWae,
-    ImgSilverRain,
-    ImgCashVille,
-    ImgPSWood,
-    ImgOneFive,
-    ImgMinimal,
-    ImgStaysHome
-  } from "@/assets/images";
-  import ProductCard from "@/presentation/components/ui/product-card";
-  import { IListProduct, IProduct } from "@/shared/types/global";
-  import mockData from "@infrastructure/persistence/mock.json";
-  import { useNavigate } from "react-router";
-  
-  const ProductRoot = ({ children }: { children: React.ReactNode }) => {
-    return (
-      <>
-        {children}
-      </>
-    );
-  };
-  
-  const ProductVariant = ({ data }: {data: IProduct[]} ) => {
-    const navigate = useNavigate();
+import { memo, useCallback } from "react";
+import { useNavigate } from "react-router";
+import ProductCard from "@/presentation/components/ui/product-card";
+import { IListProduct, IProduct } from "@/shared/types/global";
 
-    const handleClick = (id: number) => {
-      navigate(`/browse-by/${id}`)
-    };
+const ProductVariant = memo(({ data }: { data: IProduct[] }) => {
+  const navigate = useNavigate();
 
-    if(!data) return;
-  
-    return (
-      <div className="flex gap-4">
-        {data.map(
-            ({ id, location, name, price, imgUrl, isRecommended }: IProduct) =>
-              (
-                <ProductCard
-                  key={id}
-                  id={id}
-                  name={name}
-                  price={price}
-                  location={location}
-                  imgUrl={imgUrl}
-                  handleClick={handleClick}
-                  isRecommended={isRecommended}
-                  variant="2"
-                />
-              )
-          )}
-      </div>
-    );
-  };
+  // Stable callback for navigation - prevents recreation on every render
+  const handleClick = useCallback((id: number) => {
+    navigate(`/detail/${id}`);
+  }, [navigate]);
 
-  const Product = () => {
-    const dataItem: IListProduct[] = mockData.product;
-  
-    const houses = [
-        ImgTabbyTown,
-        ImgAnggana,
-        ImgSeattleRain,
-        ImgWoodenPit,
-    ];
+  if (!data) return null;
 
-    const hotels = [
-        ImgGreenPark,
-        ImgPodoWae,
-        ImgSilverRain,
-        ImgCashVille,
-    ]
+  return (
+    <div className="flex gap-4">
+      {data.map(({ id, location, name, price, imgUrl, isRecommended }: IProduct, index) => (
+        <div
+          key={id}
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay={index * 100}
+        >
+          <ProductCard
+            id={id}
+            name={name}
+            price={price}
+            location={location}
+            imgUrl={imgUrl}
+            handleClick={handleClick}
+            isRecommended={isRecommended}
+            variant="2"
+          />
+        </div>
+      ))}
+    </div>
+  );
+});
+ProductVariant.displayName = "ProductVariant";
 
-    const apartments = [
-        ImgPSWood,
-        ImgOneFive,
-        ImgMinimal,
-        ImgStaysHome
-    ]
-  
-    const enrichedData = dataItem.map((item) => {
-        const imgList =
-          item.category === "houses"
-            ? houses
-            : item.category === "hotels"
-            ? hotels
-            : apartments;
-      
-        return {
-          ...item,
-          items: item.items.map((j, indexj) => ({
-            ...j,
-            imgUrl: imgList[indexj % imgList.length],
-          })),
-        };
-      });      
+interface ILayoutProduct {
+  data: IListProduct[];
+}
 
-    return (
-        <>
-            {
-                enrichedData.map(({name, items} : IListProduct, index) => (
-                    <div className="flex flex-col w-full mt-[70px]" key={index}>
-                        <span className="text-title-24 mb-5">{name}</span>
-                        <ProductVariant data={items} />
-                    </div>
-                ))
-            }
-        
-        </>
-    )
-  }
-  
-  ProductRoot.Product = Product;
-  
-  export default ProductRoot;
+const LayoutProduct = memo(({ data = [] }: ILayoutProduct) => {
+  if (!data) return null;
+
+  return (
+    <>
+      {data.map(({ name, items }: IListProduct, index) => (
+        <div className="flex flex-col w-full mt-[70px]" key={index}>
+          <span className="text-title-24 mb-5">{name}</span>
+          <ProductVariant data={items} />
+        </div>
+      ))}
+    </>
+  );
+});
+LayoutProduct.displayName = "LayoutProduct";
+
+export default LayoutProduct;
   

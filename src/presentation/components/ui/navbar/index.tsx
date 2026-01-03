@@ -1,8 +1,40 @@
 import { Link, useLocation } from "react-router"
+import { useEffect, useState } from "react"
+
+const useScrollPosition = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return isScrolled;
+};
 
 const NavbarRoot = ({ children }: { children: React.ReactNode }) => {
+  const isScrolled = useScrollPosition();
+
   return (
-    <div className="flex justify-between items-center px-32 py-4 outline outline-solid outline-gray-100">
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-32 py-4 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/80 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       {children}
     </div>
   );
@@ -33,7 +65,25 @@ const Nav = () => {
   return (
     <nav className="flex gap-4">
       {dataNav.map(({ name, displayName, urlTo }: IDataNav) => {
-        const isActive = location.pathname === urlTo;
+        let isActive = false;
+
+        if (name === 'home') {
+          // Home is active for exact path OR detail/booking pages
+          isActive = location.pathname === urlTo ||
+                     location.pathname.startsWith('/detail') ||
+                     location.pathname.startsWith('/booking');
+        } else if (name === 'browse-by') {
+          // Browse By is active for exact path OR category detail pages
+          isActive = location.pathname === urlTo ||
+                     location.pathname.startsWith('/category');
+        } else if (name === 'stories') {
+          // Stories is active for exact path OR story detail pages
+          isActive = location.pathname === urlTo ||
+                     location.pathname.startsWith('/stories/');
+        } else {
+          // For other nav items (agents), only active for exact match
+          isActive = location.pathname === urlTo;
+        }
 
         return (
           <Link key={name} to={urlTo}>

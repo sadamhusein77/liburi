@@ -1,5 +1,5 @@
 import { IContentFooter, IItemContentFooter } from '@/shared/types/global';
-import mockData from '@infrastructure/persistence/mock.json';
+import { mockData } from '@/infrastructure/persistence/mock';
 import { Link } from 'react-router';
 
 const Footer = ({ children }: {children?: React.ReactNode}) => {
@@ -57,9 +57,10 @@ const ContentList = () => {
 }
 
 const CopyRight = () => {
+    const date = new Date();
     return (
         <p className="text-base text-center font-light my-[50px]">
-            Copyright 2025 • All rights reserved • Staycation
+            Copyright {date.getFullYear()} • All rights reserved • Staycation
         </p>
     )
 }

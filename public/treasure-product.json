@@ -1,0 +1,41 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "product": [
+            {   
+                "name": "Treasure to Choose",
+                "category": "treasure",
+                "items": [
+                    {
+                        "id": 21,
+                        "name": "Tabby Town",
+                        "imgUrl": "/images/tabby-town.svg",
+                        "location": "Gunung Batu, Indonesia",
+                        "isRecommended": true
+                    },
+                    {
+                        "id": 22,
+                        "name": "Anggana",
+                        "imgUrl": "/images/anggana.svg",
+                        "location": "Bogor, Indonesia"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Seattle Rain",
+                        "imgUrl": "/images/seattle-rain.svg",
+                        "location": "Jakarta, Indonesia"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Wodden Pit",
+                        "imgUrl": "/images/wooden-pit.svg",
+                        "location": "Wonosobo, Indonesia"
+                    }
+                ]
+            }
+        ]
+    }
+}

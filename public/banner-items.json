@@ -1,0 +1,25 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "itemList": [
+            {
+                "name": "travelers",
+                "count": 80409,
+                "icon": "/ico/ic_traveler.svg"
+            },
+            {
+                "name": "treasure",
+                "count": 862,
+                "icon": "/ico/ic_treasure.svg"
+            },
+            {
+                "name": "cities",
+                "count": 1492,
+                "icon": "/ico/ic_cities.svg"
+            }
+        ]
+    }
+}

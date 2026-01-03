@@ -1,75 +1,112 @@
-import React from 'react';
-import { IcCities, IcTravelers, IcTreasure } from '@assets/ico';
+import { memo } from "react";
 import { ImgBanner } from '@assets/images';
 import { Button } from '@/components/ui/button';
 import Item from '@/presentation/components/ui/item';
-import mockData from '@infrastructure/persistence/mock.json';
 import { IItem } from '@/shared/types/global';
+import { Link } from "react-router";
+
+interface BannerRootProps {
+  itemList?: IItem[];
+  children?: React.ReactNode;
+}
 
 // Root component
-const BannerRoot = ({ children }: { children: React.ReactNode }) => (
+const BannerRoot = memo(({ itemList, children }: BannerRootProps) => (
   <div className="flex justify-between gap-8">
-    {children}
+    {children ? (
+      children
+    ) : (
+      <>
+        <BannerContent>
+          <BannerCTA>
+            <BannerItemList itemList={itemList ?? []} />
+          </BannerCTA>
+        </BannerContent>
+        <BannerImage />
+      </>
+    )}
   </div>
-);
+));
+BannerRoot.displayName = "BannerRoot";
 
 // Content wrapper
-const BannerContent = ({ children }: { children: React.ReactNode }) => (
+const BannerContent = memo(({ children }: { children: React.ReactNode }) => (
   <div className="max-w-md">
     {children}
   </div>
-);
+));
+BannerContent.displayName = "BannerContent";
 
 // CTA section with button and description
-const BannerCTA = ({ children }: { children: React.ReactNode }) => (
+const BannerCTA = memo(({ children }: { children: React.ReactNode }) => (
   <div className="flex flex-col gap-4 h-full">
     <div className="flex-1 flex flex-col gap-[30px]">
-        <h3 className="text-[42px] font-bold leading-tight">
+      <h3 className="text-[42px] font-bold leading-tight">
         <span className='text-liburi-primary'>Forget Busy Work,</span> <br />
         Start Next Vacation
-        </h3>
-        <p className="text-md text-gray-500">
-        We provide what you need to enjoy your holiday with family. 
+      </h3>
+      <p className="text-md text-gray-500">
+        We provide what you need to enjoy your holiday with family.
         Time to make another memorable moment.
-        </p>
-        <Button>Show Me Now</Button>
+      </p>
+      <Link to="/browse-by">
+        <Button className="hover:cursor-pointer">Show Me Now</Button>
+      </Link>
     </div>
     {children}
   </div>
-);
+));
+BannerCTA.displayName = "BannerCTA";
 
-// Item List using mock data
-const ItemList = () => {
-  const dataItem: IItem[] = mockData.itemList;
+// Item List
+interface ItemListProps {
+  itemList: IItem[];
+}
 
-  const icons = [IcTravelers, IcTreasure, IcCities];
-
-  const enrichedData = dataItem.map((item, index) => ({
-    ...item,
-    icon: icons[index % icons.length],
-  }));
-
+const BannerItemList = memo(({ itemList }: ItemListProps) => {
   return (
     <div className="flex gap-6">
-      {enrichedData.map(({ count, name, icon }) => (
-        <Item key={name} count={count} name={name} icon={icon} />
+      {itemList.map(({ count, name, icon }, index) => (
+        <div
+          key={name}
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay={index * 100}
+        >
+          <Item count={count} name={name} icon={icon} />
+        </div>
       ))}
     </div>
   );
-};
+});
+BannerItemList.displayName = "BannerItemList";
 
-// Image Section
-const BannerImage = () => (
-  <img src={ImgBanner} alt="img-banner" className="w-full h-full max-w-[559px]" />
-);
+// Image Section with lazy loading
+const BannerImage = memo(() => (
+  <img
+    src={ImgBanner}
+    alt="img-banner"
+    className="w-full h-full max-w-[559px]"
+    loading="eager"
+    width="559"
+    height="500"
+    data-aos="fade-left"
+    data-aos-duration="1000"
+    data-aos-delay="200"
+  />
+));
+BannerImage.displayName = "BannerImage";
 
-// Attach subcomponents
-BannerContent.CTA = BannerCTA;
-BannerCTA.ItemList = ItemList;
+// Build component with subcomponents using Object.assign
+const BannerContentWithSub = Object.assign(BannerContent, {
+  CTA: Object.assign(BannerCTA, {
+    ItemList: BannerItemList,
+  }),
+});
 
 const Banner = Object.assign(BannerRoot, {
-  Content: BannerContent,
-  Image: BannerImage
+  Content: BannerContentWithSub,
+  Image: BannerImage,
 });
 
 export default Banner;

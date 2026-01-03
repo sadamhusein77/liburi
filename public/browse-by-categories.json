@@ -1,0 +1,136 @@
+{
+  "data": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "Houses",
+        "slug": "houses",
+        "type": "property",
+        "count": 1248,
+        "description": "Beautiful houses with full amenities",
+        "imgUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 2,
+        "name": "Hotels",
+        "slug": "hotels",
+        "type": "property",
+        "count": 856,
+        "description": "Premium hotels with luxury services",
+        "imgUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 3,
+        "name": "Apartments",
+        "slug": "apartments",
+        "type": "property",
+        "count": 642,
+        "description": "Modern apartments in city centers",
+        "imgUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 4,
+        "name": "Villas",
+        "slug": "villas",
+        "type": "property",
+        "count": 389,
+        "description": "Private villas with stunning views",
+        "imgUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 5,
+        "name": "Beach Destinations",
+        "slug": "beach",
+        "type": "destination",
+        "count": 423,
+        "description": "Tropical beach getaways",
+        "imgUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 6,
+        "name": "Mountain Retreats",
+        "slug": "mountain",
+        "type": "destination",
+        "count": 312,
+        "description": "Peaceful mountain escapes",
+        "imgUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 7,
+        "name": "City Breaks",
+        "slug": "city",
+        "type": "destination",
+        "count": 567,
+        "description": "Urban adventures await",
+        "imgUrl": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 8,
+        "name": "Countryside",
+        "slug": "countryside",
+        "type": "destination",
+        "count": 234,
+        "description": "Rural tranquility and nature",
+        "imgUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 9,
+        "name": "Romantic Getaways",
+        "slug": "romantic",
+        "type": "experience",
+        "count": 189,
+        "description": "Perfect for couples",
+        "imgUrl": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 10,
+        "name": "Family Friendly",
+        "slug": "family",
+        "type": "experience",
+        "count": 456,
+        "description": "Great for the whole family",
+        "imgUrl": "https://images.unsplash.com/photo-1471899766281-a36e3ff37b34?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 11,
+        "name": "Adventure",
+        "slug": "adventure",
+        "type": "experience",
+        "count": 278,
+        "description": "Thrilling experiences",
+        "imgUrl": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop"
+      },
+      {
+        "id": 12,
+        "name": "Wellness & Spa",
+        "slug": "wellness",
+        "type": "experience",
+        "count": 198,
+        "description": "Relax and rejuvenate",
+        "imgUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop"
+      }
+    ],
+    "filters": [
+      {
+        "type": "All",
+        "label": "All Categories",
+        "options": []
+      },
+      {
+        "type": "property",
+        "label": "Property Type",
+        "options": ["Houses", "Hotels", "Apartments", "Villas"]
+      },
+      {
+        "type": "destination",
+        "label": "Destination",
+        "options": ["Beach", "Mountain", "City", "Countryside"]
+      },
+      {
+        "type": "experience",
+        "label": "Experience",
+        "options": ["Romantic", "Family", "Adventure", "Wellness"]
+      }
+    ]
+  }
+}

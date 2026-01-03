@@ -1,24 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
-import { Suspense } from 'react';
+import { StrictMode, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { landingRoutes } from "./app/router/landing";
+import Loader from "./presentation/components/ui/loader";
 
-import './index.css';
-import '@assets/styles/global.css';
-import { landingRoutes } from './app/router/landing';
-import Loader from './presentation/components/ui/loader';
+import "@assets/styles/global.css";
+import "./index.css";
 
-const router = createBrowserRouter([
- ...landingRoutes
-]);
+const queryClient = new QueryClient();
 
-createRoot(document.getElementById('root')!).render(
+const router = createBrowserRouter([...landingRoutes]);
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <QueryClientProvider client={queryClient}>
       <Suspense fallback={<Loader />}>
         <RouterProvider router={router} />
       </Suspense>
-  </StrictMode>,
-)
+    </QueryClientProvider>
+  </StrictMode>
+);

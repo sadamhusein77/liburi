@@ -1,0 +1,103 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "product": [
+            {
+                "name": "Houses with beauty backyard",
+                "category": "houses",
+                "items": [
+                    {
+                        "id": 21,
+                        "name": "Tabby Town",
+                        "imgUrl": "/images/tabby-town.svg",
+                        "location": "Gunung Batu, Indonesia",
+                        "isRecommended": true
+                    },
+                    {
+                        "id": 22,
+                        "name": "Anggana",
+                        "imgUrl": "/images/anggana.svg",
+                        "location": "Bogor, Indonesia"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Seattle Rain",
+                        "imgUrl": "/images/seattle-rain.svg",
+                        "location": "Jakarta, Indonesia"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Wodden Pit",
+                        "imgUrl": "/images/wooden-pit.svg",
+                        "location": "Wonosobo, Indonesia"
+                    }
+                ]
+            },
+            {
+                "name": "Hotels with large living room",
+                "category": "hotels",
+                "items": [
+                    {
+                        "id": 31,
+                        "name": "Green Park",
+                        "imgUrl": "/images/green-park.svg",
+                        "location": "Tangerang, Indonesia"
+                    },
+                    {
+                        "id": 32,
+                        "name": "Podo Wae",
+                        "imgUrl": "/images/podo-wae.svg",
+                        "location": "Madiun, Indonesia"
+                    },
+                    {
+                        "id": 33,
+                        "name": "Silver Rain",
+                        "imgUrl": "/images/silver-rain.svg",
+                        "location": "Bandung, Indonesia"
+                    },
+                    {
+                        "id": 34,
+                        "name": "Cashville",
+                        "imgUrl": "/images/cash-ville.svg",
+                        "location": "Kemang, Indonesia",
+                        "isRecommended": true
+                    }
+                ]
+            },
+            {
+                "name": "Apartments with kitchen set",
+                "category": "apartments",
+                "items": [
+                    {
+                        "id": 41,
+                        "name": "PS Wood",
+                        "imgUrl": "/images/ps-wood.svg",
+                        "location": "Depok, Indonesia"
+                    },
+                    {
+                        "id": 42,
+                        "name": "One Five",
+                        "imgUrl": "/images/one-five.svg",
+                        "location": "Jakarta, Indonesia"
+                    },
+                    {
+                        "id": 43,
+                        "name": "Minimal",
+                        "imgUrl": "/images/minimal.svg",
+                        "location": "Bogor, Indonesia",
+                        "isRecommended": true
+                    },
+                    {
+                        "id": 44,
+                        "name": "Stays Home",
+                        "imgUrl": "/images/stays-home.svg",
+                        "location": "Wonosobo, Indonesia"
+                    }
+                ]
+            }
+        ]
+    }
+}

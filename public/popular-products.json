@@ -1,0 +1,45 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "productPopular": [
+            {
+                "id": 1,
+                "name": "Blue Origin Fams",
+                "location": "Jakarta Indonesia",
+                "price": 50,
+                "imgUrl": "/images/blue-origin-fams.svg"
+            },
+            {
+                "id": 2,
+                "name": "Ocean Land",
+                "location": "Bandung Indonesia",
+                "price": 22,
+                "imgUrl": "/images/ocean-island.svg"
+            },
+            {
+                "id": 3,
+                "name": "Stark House",
+                "location": "Malang Indonesia",
+                "price": 856,
+                "imgUrl": "/images/stark-house.svg"
+            },
+            {
+                "id": 4,
+                "name": "Vinna Vill",
+                "location": "Malang Indonesia",
+                "price": 62,
+                "imgUrl": "/images/vinna-vill.svg"
+            },
+            {
+                "id": 5,
+                "name": "Bobox",
+                "location": "Medan Indonesia",
+                "price": 72,
+                "imgUrl": "/images/bobox.svg"
+            }
+        ]
+    }
+}

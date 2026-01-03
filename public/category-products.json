@@ -1,0 +1,165 @@
+{
+  "data": {
+    "category": {
+      "id": 1,
+      "name": "Houses",
+      "slug": "houses",
+      "type": "property",
+      "count": 1248,
+      "description": "Beautiful houses with full amenities",
+      "imgUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=400&fit=crop"
+    },
+    "products": [
+      {
+        "id": 1,
+        "name": "Sunset Villa",
+        "location": "Bali, Indonesia",
+        "price": 150,
+        "imgUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop",
+        "isRecommended": true,
+        "amenities": ["wifi", "ac", "pool", "kitchen"],
+        "rating": 4.9,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 2,
+        "name": "Green Valley House",
+        "location": "Bandung, Indonesia",
+        "price": 120,
+        "imgUrl": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "ac", "garden"],
+        "rating": 4.7,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 3,
+        "name": "Ocean View Retreat",
+        "location": "Lombok, Indonesia",
+        "price": 180,
+        "imgUrl": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&h=400&fit=crop",
+        "isRecommended": true,
+        "amenities": ["wifi", "ac", "pool", "beach"],
+        "rating": 4.8,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 4,
+        "name": "Mountain Paradise",
+        "location": "Bogor, Indonesia",
+        "price": 95,
+        "imgUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "fireplace", "garden"],
+        "rating": 4.6,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 5,
+        "name": "City Center House",
+        "location": "Jakarta, Indonesia",
+        "price": 200,
+        "imgUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "ac", "kitchen", "parking"],
+        "rating": 4.5,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 6,
+        "name": "Rustic Cottage",
+        "location": "Yogyakarta, Indonesia",
+        "price": 75,
+        "imgUrl": "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "garden"],
+        "rating": 4.4,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 7,
+        "name": "Luxury Mansion",
+        "location": "Surabaya, Indonesia",
+        "price": 350,
+        "imgUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+        "isRecommended": true,
+        "amenities": ["wifi", "ac", "pool", "kitchen", "gym", "parking"],
+        "rating": 5.0,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 8,
+        "name": "Cozy Studio House",
+        "location": "Medan, Indonesia",
+        "price": 60,
+        "imgUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "ac", "kitchen"],
+        "rating": 4.3,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 9,
+        "name": "Beachfront Villa",
+        "location": "Bali, Indonesia",
+        "price": 280,
+        "imgUrl": "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "ac", "pool", "beach", "kitchen"],
+        "rating": 4.9,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 10,
+        "name": "Forest Hideaway",
+        "location": "Bogor, Indonesia",
+        "price": 110,
+        "imgUrl": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "fireplace", "garden", "parking"],
+        "rating": 4.7,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 11,
+        "name": "Modern Townhouse",
+        "location": "Jakarta, Indonesia",
+        "price": 165,
+        "imgUrl": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "ac", "kitchen", "parking"],
+        "rating": 4.6,
+        "categorySlug": "houses"
+      },
+      {
+        "id": 12,
+        "name": "Traditional Javanese House",
+        "location": "Yogyakarta, Indonesia",
+        "price": 130,
+        "imgUrl": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=600&h=400&fit=crop",
+        "amenities": ["wifi", "garden", "cultural"],
+        "rating": 4.8,
+        "categorySlug": "houses"
+      }
+    ],
+    "pagination": {
+      "currentPage": 1,
+      "totalPages": 105,
+      "totalItems": 1248,
+      "itemsPerPage": 12
+    },
+    "aggregations": {
+      "priceRange": {
+        "min": 50,
+        "max": 800
+      },
+      "locations": [
+        { "name": "Bali", "count": 245 },
+        { "name": "Jakarta", "count": 189 },
+        { "name": "Bandung", "count": 156 },
+        { "name": "Bogor", "count": 134 },
+        { "name": "Yogyakarta", "count": 98 }
+      ],
+      "amenities": [
+        { "name": "wifi", "icon": "ic_wifi", "count": 1180 },
+        { "name": "ac", "icon": "ic_ac", "count": 980 },
+        { "name": "pool", "icon": "pool", "count": 450 },
+        { "name": "kitchen", "icon": "kitchen", "count": 780 },
+        { "name": "garden", "icon": "garden", "count": 320 },
+        { "name": "parking", "icon": "parking", "count": 890 }
+      ]
+    }
+  }
+}

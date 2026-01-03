@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Booking created successfully",
+  "data": {
+    "id": "BKG-123456",
+    "confirmationNumber": "CONF-789456"
+  }
+}

@@ -17,6 +17,15 @@ import ImgOneFive from "./one-five.svg";
 import ImgMinimal from "./minimal.svg";
 import ImgStaysHome from "./stays-home.svg";
 import ImgFamilyGroup from "./family-group.svg";
+import ImgVillage from "./village.svg";
+import ImgVillage2 from "./village-2.svg";
+import ImgVillage3 from "./village-3.svg";
+import ImgDogClubs from "./dog-clubs.svg";
+import ImgFamilyGroup2 from "./family-group-2.svg";
+import ImgGreenlake from "./green-lake.svg";
+import ImgLabourWait from "./labour-wait.svg";
+import ImgSnorkeling from "./snorkeling.svg";
+import ImgSuccess from "./success.svg";
 
 export {
   ImgBanner,
@@ -37,5 +46,14 @@ export {
   ImgOneFive,
   ImgMinimal,
   ImgStaysHome,
-  ImgFamilyGroup
+  ImgFamilyGroup,
+  ImgVillage,
+  ImgVillage2,
+  ImgVillage3,
+  ImgDogClubs,
+  ImgFamilyGroup2,
+  ImgGreenlake,
+  ImgLabourWait,
+  ImgSnorkeling,
+  ImgSuccess
 };

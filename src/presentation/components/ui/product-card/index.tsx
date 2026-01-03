@@ -1,3 +1,4 @@
+import { memo, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { IProduct } from "@/shared/types/global";
 import defaultImg from "@assets/images/default.png";
@@ -8,7 +9,7 @@ export interface IProductCard extends IProduct {
   handleClick?: (id: number) => void;
 }
 
-const ProductCard = ({
+const ProductCard = memo(({
   id,
   name,
   price,
@@ -19,20 +20,27 @@ const ProductCard = ({
   className,
   handleClick = () => console.log("handleClick not set"),
 }: IProductCard) => {
-  const renderTag = () => (
-    (variant === '1' || isRecommended) &&
-    <div className="text-white text-base flex justify-center items-center gap-1 px-3 py-2 w-[180px] absolute top-0 right-0 rounded-tr-xl rounded-bl-xl bg-pink-600 z-20">
-      {isRecommended ? (
-        <span className="font-medium">Best Choice</span>
-      ) : (
-        variant !== '2' &&
-        <>
-          <span className="font-medium">${price}</span>
-          <span className="font-light">per night</span>
-        </>
-      )}
-    </div>
-  );
+  // Stable click handler
+  const onClick = useCallback(() => {
+    handleClick(id);
+  }, [id, handleClick]);
+
+  const renderTag = useCallback(() => (
+    (variant === '1' || isRecommended) && (
+      <div className="text-white text-base flex justify-center items-center gap-1 px-3 py-2 w-[180px] absolute top-0 right-0 rounded-tr-xl rounded-bl-xl bg-pink-600 z-20">
+        {isRecommended ? (
+          <span className="font-medium">Best Choice</span>
+        ) : (
+          variant !== '2' && (
+            <>
+              <span className="font-medium">${price}</span>
+              <span className="font-light">per night</span>
+            </>
+          )
+        )}
+      </div>
+    )
+  ), [variant, isRecommended, price]);
 
   if (variant === "2") {
     return (
@@ -40,13 +48,14 @@ const ProductCard = ({
         className={cn(
           "cursor-pointer relative flex flex-col gap-2 w-full h-full group"
         )}
-        onClick={() => handleClick(id)}
+        onClick={onClick}
       >
         {renderTag()}
         <div className="overflow-hidden rounded-xl h-full w-full">
           <img
             src={imgUrl ?? defaultImg}
             alt={`Image of ${name}`}
+            loading="lazy"
             className={cn(
               "w-full h-full rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
               className
@@ -64,13 +73,14 @@ const ProductCard = ({
   return (
     <div
       className={cn("cursor-pointer relative w-full h-full group")}
-      onClick={() => handleClick(id)}
+      onClick={onClick}
     >
       {renderTag()}
       <div className="overflow-hidden rounded-xl h-full w-full">
         <img
           src={imgUrl ?? defaultImg}
           alt={`Image of ${name}`}
+          loading="lazy"
           className={cn(
             "h-full w-full object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
             className
@@ -83,6 +93,7 @@ const ProductCard = ({
       </div>
     </div>
   );
-};
+});
+ProductCard.displayName = "ProductCard";
 
 export default ProductCard;

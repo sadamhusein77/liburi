@@ -1,0 +1,59 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Success"
+    },
+    "data": {
+        "category": "House",
+        "name": "Liburi Village",
+        "location": "Sentul City, Bogor, Indonesia",
+        "images": ["/images/village.svg", "/images/village-2.svg", "/images/village-3.svg"],
+        "description": {
+            "title": "About the place",
+            "detail": "<p>Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.</p><p>Such trends saw the demise of the soul-infused techno that typified the original Detroit sound. Robert Hood has noted that he and Daniel Bell both realized something was missing from techno in the post-rave era.</p><p>Design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The national agency for design: enabling Singapore to use design for economic growth and to make lives better.</p>"
+        },
+        "price": 280,
+        "facilities": [
+            {
+                "name": "bedroom",
+                "count": 5,
+                "icon": "/ico/ic_bedroom.svg"
+            },
+            {
+                "name": "living room",
+                "count": 1,
+                "icon": "/ico/ic_livingroom.svg"
+            },
+            {
+                "name": "bathroom",
+                "count": 3,
+                "icon": "/ico/ic_bathroom.svg"
+            },
+            {
+                "name": "dinning Room",
+                "count": 1,
+                "icon": "/ico/ic_diningroom.svg"
+            },
+            {
+                "name": "mpb/s",
+                "count": 10,
+                "icon": "/ico/ic_wifi.svg"
+            },
+            {
+                "name": "unit ready",
+                "count": 10,
+                "icon": "/ico/ic_ac.svg"
+            },
+            {
+                "name": "refigrator",
+                "count": 2,
+                "icon": "/ico/ic_refrigrator.svg"
+            },
+            {
+                "name": "television",
+                "count": 4,
+                "icon": "/ico/ic_tv.svg"
+            }
+        ]
+    }
+}
