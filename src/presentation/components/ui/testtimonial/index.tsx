@@ -3,6 +3,7 @@ import { ImgFamilyGroup } from "@/assets/images";
 import { Button } from "@/components/ui/button";
 import RatingStars from "@/presentation/components/ui/rating/indes";
 import { Link } from "react-router";
+import LazyImage from "@/presentation/components/ui/lazy-image";
 
 const TestimonialRoot = memo(({ children }: { children?: React.ReactNode }) => {
   return (
@@ -21,17 +22,15 @@ const Image = memo(({ imgUrl }: ImageProps) => {
   return (
     <div
       className="relative w-[367px] h-[502px]"
-      data-aos="fade-right"
-      data-aos-duration="1000"
-      data-aos-delay="200"
     >
       <div className="w-full h-full rounded-2xl outline-2 outline-solid outline-gray-200 z-10 absolute top-0 left-0" />
-      <img
+      <LazyImage
         src={imgUrl ?? ImgFamilyGroup}
         alt="img-testimonial"
+        width={367}
+        height={502}
         loading="lazy"
-        width="367"
-        height="502"
+        placeholderClassName="rounded-2xl"
         className="h-auto w-auto z-20 absolute -bottom-10 -right-6"
       />
     </div>
@@ -43,9 +42,6 @@ const Content = memo(({ children }: { children?: React.ReactNode }) => {
   return (
     <div
       className="flex-1 h-full flex flex-col"
-      data-aos="fade-left"
-      data-aos-duration="1000"
-      data-aos-delay="400"
     >
       <span className="text-2xl font-medium mb-10 pt-24">Happy Family</span>
       {children}

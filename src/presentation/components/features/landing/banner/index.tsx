@@ -66,12 +66,9 @@ interface ItemListProps {
 const BannerItemList = memo(({ itemList }: ItemListProps) => {
   return (
     <div className="flex gap-6">
-      {itemList.map(({ count, name, icon }, index) => (
+      {itemList.map(({ count, name, icon }) => (
         <div
           key={name}
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay={index * 100}
         >
           <Item count={count} name={name} icon={icon} />
         </div>
@@ -81,18 +78,17 @@ const BannerItemList = memo(({ itemList }: ItemListProps) => {
 });
 BannerItemList.displayName = "BannerItemList";
 
-// Image Section with lazy loading
+// Image Section with lazy loading and decoding
 const BannerImage = memo(() => (
   <img
     src={ImgBanner}
     alt="img-banner"
     className="w-full h-full max-w-[559px]"
     loading="eager"
+    decoding="async"
+    fetchPriority="high"
     width="559"
     height="500"
-    data-aos="fade-left"
-    data-aos-duration="1000"
-    data-aos-delay="200"
   />
 ));
 BannerImage.displayName = "BannerImage";

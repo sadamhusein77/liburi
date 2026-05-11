@@ -31,12 +31,7 @@ const ProductPopular = memo(({ productPopular }: ProductPopularProps) => {
 
   return (
     <div className="grid grid-cols-[30%_70%] gap-x-[30px]">
-      <div
-        className="w-full h-full"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="100"
-      >
+      <div className="w-full h-full">
         <ProductCard
           id={firstProduct.id}
           name={firstProduct.name}
@@ -48,13 +43,8 @@ const ProductPopular = memo(({ productPopular }: ProductPopularProps) => {
       </div>
       <div className="grid grid-cols-2 grid-rows-2 gap-[30px]">
         {productPopular.slice(1).map(
-          ({ id, location, name, price, imgUrl }: IProduct, index) => (
-            <div
-              key={id}
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-delay={index * 100 + 200}
-            >
+          ({ id, location, name, price, imgUrl }: IProduct) => (
+            <div key={id}>
               <ProductCard
                 id={id}
                 name={name}

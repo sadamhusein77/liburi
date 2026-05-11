@@ -15,13 +15,8 @@ const ProductVariant = memo(({ data }: { data: IProduct[] }) => {
 
   return (
     <div className="flex gap-4">
-      {data.map(({ id, location, name, price, imgUrl, isRecommended }: IProduct, index) => (
-        <div
-          key={id}
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay={index * 100}
-        >
+      {data.map(({ id, location, name, price, imgUrl, isRecommended }) => (
+        <div key={id}>
           <ProductCard
             id={id}
             name={name}

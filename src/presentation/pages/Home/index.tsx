@@ -1,6 +1,4 @@
-import { useEffect, useMemo } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useMemo } from "react";
 import Banner from "@/presentation/components/features/landing/banner";
 import Popular from "@/presentation/components/features/landing/popular";
 import ProductRoot from "@/presentation/components/features/landing/product";
@@ -46,17 +44,6 @@ const CategoriesSkeleton = () => (
 );
 
 export default function Home() {
-  // Initialize AOS with optimization
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease-out-cubic",
-      throttleDelay: 99, // Optimize scroll performance
-      delay: 0,
-    });
-  }, []);
-
   // Parallel queries for better performance - no sequential dependencies
   const { data: bannerData, isLoading: loadingBanner, error: errorBanner } = useQuery({
     queryKey: ["banner-items"],

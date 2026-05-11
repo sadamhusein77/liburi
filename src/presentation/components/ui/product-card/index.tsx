@@ -2,6 +2,7 @@ import { memo, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { IProduct } from "@/shared/types/global";
 import defaultImg from "@assets/images/default.png";
+import LazyImage from "@/presentation/components/ui/lazy-image";
 
 export interface IProductCard extends IProduct {
   variant?: "1" | "2";
@@ -51,17 +52,12 @@ const ProductCard = memo(({
         onClick={onClick}
       >
         {renderTag()}
-        <div className="overflow-hidden rounded-xl h-full w-full">
-          <img
-            src={imgUrl ?? defaultImg}
-            alt={`Image of ${name}`}
-            loading="lazy"
-            className={cn(
-              "w-full h-full rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
-              className
-            )}
-          />
-        </div>
+        <LazyImage
+          src={imgUrl ?? defaultImg}
+          alt={`Image of ${name}`}
+          className={cn("w-full h-full rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105", className)}
+          placeholderClassName="rounded-xl h-full w-full"
+        />
         <div className="text-base flex flex-col mt-2 px-2">
           <span className="font-semibold">{name}</span>
           <span className="font-light text-sm">{location}</span>
@@ -76,17 +72,12 @@ const ProductCard = memo(({
       onClick={onClick}
     >
       {renderTag()}
-      <div className="overflow-hidden rounded-xl h-full w-full">
-        <img
-          src={imgUrl ?? defaultImg}
-          alt={`Image of ${name}`}
-          loading="lazy"
-          className={cn(
-            "h-full w-full object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105",
-            className
-          )}
-        />
-      </div>
+      <LazyImage
+        src={imgUrl ?? defaultImg}
+        alt={`Image of ${name}`}
+        className={cn("h-full w-full object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105", className)}
+        placeholderClassName="rounded-xl h-full w-full"
+      />
       <div className="text-white text-base flex flex-col mt-2 px-2 absolute bottom-3 left-3">
         <span className="font-semibold">{name}</span>
         <span className="text-sm">{location}</span>
